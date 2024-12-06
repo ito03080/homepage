@@ -1,0 +1,129 @@
+@charset "UTF-8";
+
+html {
+    background-color: beige;
+}
+
+body {
+    margin: 90px;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    padding: 0px;
+    padding-bottom: 80px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+button {
+    width: 10em;
+    height: 3em;
+    padding: 0.8em;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background: #0C88CA;
+}
+
+img {
+    width: 30%;
+    height: 30%;
+}
+
+#iidx img {
+    display: inline-block;
+}
+
+#sdvx img {
+    display: inline-block;
+}
+
+#chunithm img {
+    display: inline-block;
+}
+
+h1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to right, #e60000, #f39800, #fff100, #009944, #0068b7, #1d2088, #920783);
+    padding: 0.5em;
+    font-family: 'Noto Serif JP', sans-serif;
+    margin: 0;
+    z-index: 98;
+}
+
+h2 {
+    display: inline-block;
+    border-bottom: 4px solid #a7d6ff;
+}
+
+.hamburger {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.hamburger span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    margin-bottom: 5px;
+    transition: 0.4s;
+}
+
+.nav-menu {
+    position: fixed;
+    right: -250px;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #f8f9fa;
+    padding-top: 60px;
+    transition: 0.4s;
+    z-index: 99;
+}
+
+.nav-menu.active {
+    right: 0;
+}
+
+.nav-menu a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+}
+
+.nav-menu a:hover {
+    background-color: #ddd;
+}
+
+
+#menu {
+    margin-top: 40px;
+    position: relative;
+    z-index: 96;
+}
+
+#menu img {
+    width: 30%;
+    height: 30%;
+    margin-top: 20px;  
+}
+
+.copyright {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 10px 0;
+    background-color: beige;
+    width: 100%;
+    font-size: 0.8em;
+    color: #666;
+}
