@@ -1,0 +1,292 @@
+@charset "UTF-8";
+
+:root {
+    --primary-color: #0C88CA;
+    --secondary-color: #364e96;
+    --background-color: #f5f5f5;
+    --text-color: #333;
+    --header-height: 60px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ヘッダースタイル */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--header-height);
+    background: linear-gradient(45deg, #0C88CA, #364e96);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.site-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: none;
+    position: static;
+    padding: 0;
+}
+
+/* メインコンテンツ */
+.main-content {
+    margin-top: var(--header-height);
+    padding: 2rem;
+    flex: 1;
+}
+
+.hero-section {
+    position: relative;
+    height: 60vh;
+    overflow: hidden;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* ナビゲーションメニュー */
+.nav-menu {
+    position: fixed;
+    right: -300px;
+    top: var(--header-height);
+    width: 300px;
+    height: calc(100vh - var(--header-height));
+    background-color: white;
+    transition: 0.3s ease;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    z-index: 999;
+}
+
+.nav-menu.active {
+    right: 0;
+}
+
+.nav-content {
+    padding: 2rem;
+}
+
+.nav-item {
+    display: block;
+    padding: 1rem;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: 0.3s ease;
+    border-radius: 8px;
+}
+
+.nav-item:hover {
+    background-color: rgba(12, 136, 202, 0.1);
+    transform: translateX(10px);
+}
+
+/* ハンバーガーメニュー */
+.hamburger {
+    width: 30px;
+    height: 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    transition: 0.3s ease;
+}
+
+.hamburger span:nth-child(1) { top: 0; }
+.hamburger span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+.hamburger span:nth-child(3) { bottom: 0; }
+
+/* フッター */
+.footer {
+    background-color: var(--secondary-color);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 40vh;
+    }
+
+    .main-content {
+        padding: 1rem;
+    }
+
+    .header {
+        padding: 0 1rem;
+    }
+}
+
+/* アニメーション */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.content-section {
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* プロフィールページ用スタイル */
+.profile-info {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.profile-details, .recommendation {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 0.8em 1.5em;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* ゲームページ用スタイル */
+.game-section {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.game-info {
+    margin-top: 1rem;
+}
+
+.game-images {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.game-images img {
+    max-width: 45%;
+    height: auto;
+}
+
+/* ギャラリーページ用スタイル */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.gallery-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin: 1rem 0;
+}
+
+.image-group {
+    display: flex;
+    gap: 1rem;
+}
+
+.image-group img {
+    width: calc(50% - 0.5rem);
+}
+
+.date {
+    color: #666;
+    font-size: 0.9em;
+    margin: 0.5rem 0;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+
+    .game-images {
+        flex-direction: column;
+    }
+
+    .game-images img {
+        max-width: 100%;
+    }
+
+    .image-group {
+        flex-direction: column;
+    }
+
+    .image-group img {
+        width: 100%;
+    }
+}
