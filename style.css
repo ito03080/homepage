@@ -28,7 +28,6 @@ body {
     flex-direction: column;
 }
 
-/* ヘッダースタイル */
 .header {
     position: fixed;
     top: 0;
@@ -53,7 +52,6 @@ body {
     padding: 0;
 }
 
-/* メインコンテンツ */
 .main-content {
     margin-top: var(--header-height);
     padding: 2rem;
@@ -85,7 +83,6 @@ body {
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
-/* ナビゲーションメニュー */
 .nav-menu {
     position: fixed;
     right: -300px;
@@ -141,7 +138,6 @@ body {
 .hamburger span:nth-child(2) { top: 50%; transform: translateY(-50%); }
 .hamburger span:nth-child(3) { bottom: 0; }
 
-/* フッター */
 .footer {
     background-color: var(--secondary-color);
     color: white;
